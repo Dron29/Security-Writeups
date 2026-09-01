@@ -1,0 +1,486 @@
+/* =========================================================
+   DRON SECURITY - HOMEPAGE
+   ========================================================= */
+
+.ds-container {
+  width: min(1040px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.ds-hero {
+  padding: 120px 0 105px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ds-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+
+  color: #8f9bb3;
+}
+
+.ds-hero-eyebrow span {
+  display: block;
+  width: 26px;
+  height: 1px;
+  background: #68748b;
+}
+
+.ds-hero-title {
+  margin: 0;
+  max-width: 950px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(58px, 8vw, 104px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 700;
+}
+
+.ds-hero-title span {
+  display: block;
+}
+
+.ds-hero-accent {
+  color: #737e95;
+}
+
+.ds-hero-description {
+  max-width: 720px;
+
+  margin: 34px 0 30px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+
+  color: #9da8bc;
+}
+
+.ds-hero-description::first-letter {
+  color: #7180ff;
+}
+
+.ds-hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 0 20px;
+
+  border-radius: 5px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.ds-button:hover {
+  transform: translateY(-2px);
+}
+
+.ds-button-primary {
+  background: #4c46ff;
+  color: white;
+  border: 1px solid #4c46ff;
+}
+
+.ds-button-primary:hover {
+  background: #5b55ff;
+}
+
+.ds-button-secondary {
+  background: transparent;
+  color: #7d89ff;
+  border: 1px solid #353cff;
+}
+
+.ds-button-secondary:hover {
+  border-color: #6870ff;
+}
+
+.ds-social {
+  margin-top: 28px;
+}
+
+.ds-social a {
+  margin-right: 14px;
+  opacity: 0.7;
+}
+
+.ds-social a:hover {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.ds-section {
+  padding: 78px 0;
+}
+
+.ds-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.ds-section-heading {
+  margin-bottom: 30px;
+}
+
+.ds-section-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+
+  color: #69758c;
+}
+
+.ds-section h2 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.ds-view-all {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: #5967ff;
+  text-decoration: none;
+}
+
+.ds-view-all:hover {
+  color: #7d88ff;
+}
+
+
+/* =========================================================
+   RESEARCH
+   ========================================================= */
+
+.ds-post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ds-post-card {
+  min-height: 245px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(150, 160, 185, 0.22);
+  border-radius: 7px;
+
+  background: rgba(12, 19, 38, 0.35);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.ds-post-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(130, 140, 180, 0.55);
+}
+
+.ds-post-meta {
+  display: flex;
+  gap: 8px;
+
+  margin-bottom: 25px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: #657189;
+}
+
+.ds-post-card h3 {
+  margin: 0 0 12px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.ds-post-card h3 a {
+  color: #eef1f7;
+  text-decoration: none;
+}
+
+.ds-post-card p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  color: #8995ab;
+}
+
+.ds-read-more {
+  display: inline-block;
+
+  margin-top: 24px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+
+  color: #6673ff;
+  text-decoration: none;
+}
+
+.ds-empty-state {
+  grid-column: 1 / -1;
+
+  padding: 42px;
+
+  text-align: center;
+
+  border: 1px dashed rgba(140, 150, 180, 0.25);
+  border-radius: 7px;
+
+  color: #69758c;
+}
+
+.ds-empty-state span {
+  display: block;
+  margin-bottom: 10px;
+
+  font-family: "JetBrains Mono", monospace;
+  color: #5967ff;
+}
+
+.ds-empty-state p {
+  margin: 0;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   AREAS OF FOCUS
+   ========================================================= */
+
+.ds-focus {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ds-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.ds-focus-card {
+  position: relative;
+
+  min-height: 150px;
+
+  padding: 26px 24px;
+
+  border: 1px solid rgba(150, 160, 185, 0.3);
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.ds-focus-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(125, 137, 255, 0.65);
+
+  background: rgba(45, 52, 100, 0.14);
+}
+
+.ds-card-number {
+  display: block;
+
+  margin-bottom: 30px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+
+  color: #59657c;
+}
+
+.ds-focus-card h3 {
+  margin: 0 0 8px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+
+  color: #edf0f6;
+}
+
+.ds-focus-card p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.6;
+
+  color: #77839a;
+}
+
+
+/* =========================================================
+   STATEMENT
+   ========================================================= */
+
+.ds-statement {
+  padding-top: 25px;
+  padding-bottom: 110px;
+}
+
+.ds-statement-box {
+  padding: 58px 50px;
+
+  text-align: center;
+
+  border: 1px solid rgba(150, 160, 185, 0.3);
+  border-radius: 8px;
+}
+
+.ds-statement-box .ds-section-label {
+  margin-bottom: 18px;
+}
+
+.ds-statement-box h2 {
+  max-width: 700px;
+
+  margin: 0 auto 20px;
+
+  font-size: clamp(26px, 4vw, 38px);
+}
+
+.ds-statement-box p {
+  max-width: 690px;
+
+  margin: 0 auto;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  color: #8490a7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .ds-hero {
+    padding: 90px 0 75px;
+  }
+
+  .ds-hero-title {
+    font-size: clamp(50px, 13vw, 78px);
+  }
+
+  .ds-post-grid,
+  .ds-focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-post-card {
+    min-height: auto;
+  }
+
+  .ds-section-header {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .ds-container {
+    width: min(100% - 32px, 1040px);
+  }
+
+  .ds-hero {
+    padding: 70px 0 60px;
+  }
+
+  .ds-hero-title {
+    font-size: clamp(44px, 14vw, 64px);
+    letter-spacing: -0.045em;
+  }
+
+  .ds-hero-description {
+    font-size: 15px;
+  }
+
+  .ds-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ds-button {
+    width: 100%;
+  }
+
+  .ds-section {
+    padding: 60px 0;
+  }
+
+  .ds-statement {
+    padding-bottom: 70px;
+  }
+
+  .ds-statement-box {
+    padding: 40px 22px;
+  }
+
+}

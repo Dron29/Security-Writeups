@@ -1,0 +1,177 @@
+{{ define "main" }}
+
+<section class="ds-hero">
+  <div class="ds-container">
+    <div class="ds-hero-eyebrow">
+      <span></span>
+      CYBERSECURITY RESEARCH
+    </div>
+
+    <h1 class="ds-hero-title">
+      <span>Dron Security</span>
+      <span class="ds-hero-accent">Offensive Security.</span>
+    </h1>
+
+    <p class="ds-hero-description">
+      Practical security research, penetration testing, bug bounty methodology,
+      CTF writeups, cloud security and security engineering.
+    </p>
+
+    <div class="ds-hero-actions">
+      <a href="{{ "posts/" | relLangURL }}" class="ds-button ds-button-primary">
+        Explore Research
+      </a>
+
+      <a href="{{ "about/" | relLangURL }}" class="ds-button ds-button-secondary">
+        About Me
+      </a>
+    </div>
+
+    <!-- {{ if site.Params.social }}
+      <div class="ds-social">
+        {{ partial "social-links.html" . }}
+       </div> 
+    {{ end }} 
+  </div> -->
+</section>
+
+
+<section class="ds-section ds-research">
+  <div class="ds-container">
+
+    <div class="ds-section-header">
+      <div>
+        <span class="ds-section-label">LATEST</span>
+        <h2>LATEST RESEARCH</h2>
+      </div>
+
+      <a href="{{ "posts/" | relLangURL }}" class="ds-view-all">
+        View all →
+      </a>
+    </div>
+
+    <div class="ds-post-grid">
+
+      {{ $posts := where site.RegularPages "Type" "posts" }}
+
+      {{ if $posts }}
+
+        {{ range $posts | first 3 }}
+          <article class="ds-post-card">
+
+            <div class="ds-post-meta">
+              {{ with .Date }}
+                <time datetime="{{ .Format "2006-01-02" }}">
+                  {{ .Format "02 Jan 2006" }}
+                </time>
+              {{ end }}
+
+              {{ with .Params.categories }}
+                <span>·</span>
+                <span>{{ index . 0 }}</span>
+              {{ end }}
+            </div>
+
+            <h3>
+              <a href="{{ .RelPermalink }}">
+                {{ .Title }}
+              </a>
+            </h3>
+
+            {{ with .Summary }}
+              <p>{{ . | plainify | truncate 150 }}</p>
+            {{ end }}
+
+            <a href="{{ .RelPermalink }}" class="ds-read-more">
+              Read research →
+            </a>
+
+          </article>
+        {{ end }}
+
+      {{ else }}
+
+        <div class="ds-empty-state">
+          <span>//</span>
+          <p>Research articles are being published.</p>
+        </div>
+
+      {{ end }}
+
+    </div>
+  </div>
+</section>
+
+
+<section class="ds-section ds-focus">
+  <div class="ds-container">
+
+    <div class="ds-section-heading">
+      <span class="ds-section-label">EXPERTISE</span>
+      <h2>Areas of Focus</h2>
+    </div>
+
+    <div class="ds-focus-grid">
+
+      <a href="{{ "categories/penetration-testing/" | relLangURL }}" class="ds-focus-card">
+        <span class="ds-card-number">01</span>
+        <h3>Penetration Testing</h3>
+        <p>Web applications, APIs and infrastructure.</p>
+      </a>
+
+      <a href="{{ "categories/bug-bounty/" | relLangURL }}" class="ds-focus-card">
+        <span class="ds-card-number">02</span>
+        <h3>Bug Bounty</h3>
+        <p>Vulnerability research and practical methodologies.</p>
+      </a>
+
+      <a href="{{ "categories/ctf/" | relLangURL }}" class="ds-focus-card">
+        <span class="ds-card-number">03</span>
+        <h3>CTF Writeups</h3>
+        <p>Web, Linux, Windows, OSINT and more.</p>
+      </a>
+
+      <a href="{{ "categories/cloud-security/" | relLangURL }}" class="ds-focus-card">
+        <span class="ds-card-number">04</span>
+        <h3>Cloud Security</h3>
+        <p>Offensive and defensive cloud security research.</p>
+      </a>
+
+      <a href="{{ "categories/security-research/" | relLangURL }}" class="ds-focus-card">
+        <span class="ds-card-number">05</span>
+        <h3>Security Research</h3>
+        <p>Technical experiments, analysis and discoveries.</p>
+      </a>
+
+      <a href="{{ "categories/security-tools/" | relLangURL }}" class="ds-focus-card">
+        <span class="ds-card-number">06</span>
+        <h3>Security Tools</h3>
+        <p>Tools, automation and practical security workflows.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="ds-section ds-statement">
+  <div class="ds-container">
+
+    <div class="ds-statement-box">
+      <span class="ds-section-label">PHILOSOPHY</span>
+
+      <h2>
+        Security research should be reproducible.
+      </h2>
+
+      <p>
+        Dron Security documents practical penetration testing,
+        vulnerability research, CTF techniques, cloud security
+        experiments and the methodology behind them.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{{ end }}

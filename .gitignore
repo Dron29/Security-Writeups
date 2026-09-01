@@ -1,0 +1,15 @@
+# Hugo
+/public/
+/.hugo_build.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
