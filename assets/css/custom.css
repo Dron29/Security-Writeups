@@ -1,5 +1,5 @@
 /* =========================================================
-   DRON SECURITY - HOMEPAGE
+   NULLTRACE - HOMEPAGE
    ========================================================= */
 
 .ds-container {
@@ -13,7 +13,7 @@
    ========================================================= */
 
 .ds-hero {
-  padding: 120px 0 105px;
+  padding: 82px 0 75px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
@@ -22,10 +22,10 @@
   align-items: center;
   gap: 12px;
 
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 
   font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
 
@@ -34,19 +34,18 @@
 
 .ds-hero-eyebrow span {
   display: block;
-  width: 26px;
+  width: 24px;
   height: 1px;
   background: #68748b;
 }
 
 .ds-hero-title {
   margin: 0;
-  max-width: 950px;
+  max-width: 1000px;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(58px, 8vw, 104px);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  line-height: 1;
+  letter-spacing: -0.045em;
   font-weight: 700;
 }
 
@@ -54,18 +53,38 @@
   display: block;
 }
 
+/* Main brand name */
+
+.ds-hero-brand {
+  font-size: clamp(58px, 6vw, 82px);
+  line-height: 1;
+  color: #f2f3f5;
+}
+
+/* Main tagline */
+
 .ds-hero-accent {
+  margin-top: 12px;
+
+  font-size: clamp(38px, 4.2vw, 62px);
+  line-height: 1.05;
+
   color: #737e95;
 }
 
-.ds-hero-description {
-  max-width: 720px;
 
-  margin: 34px 0 30px;
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+.ds-hero-description {
+  max-width: 700px;
+
+  margin: 28px 0 26px;
 
   font-family: "Inter", sans-serif;
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.7;
 
   color: #9da8bc;
 }
@@ -73,6 +92,11 @@
 .ds-hero-description::first-letter {
   color: #7180ff;
 }
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
 
 .ds-hero-actions {
   display: flex;
@@ -124,6 +148,11 @@
 .ds-button-secondary:hover {
   border-color: #6870ff;
 }
+
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
 
 .ds-social {
   margin-top: 28px;
@@ -184,6 +213,7 @@
 .ds-view-all {
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
+
   color: #5967ff;
   text-decoration: none;
 }
@@ -194,7 +224,7 @@
 
 
 /* =========================================================
-   RESEARCH
+   RESEARCH / POSTS
    ========================================================= */
 
 .ds-post-grid {
@@ -419,11 +449,16 @@
 @media (max-width: 800px) {
 
   .ds-hero {
-    padding: 90px 0 75px;
+    padding: 70px 0 60px;
   }
 
-  .ds-hero-title {
-    font-size: clamp(50px, 13vw, 78px);
+  .ds-hero-brand {
+    font-size: clamp(48px, 12vw, 64px);
+  }
+
+  .ds-hero-accent {
+    margin-top: 10px;
+    font-size: clamp(30px, 7vw, 44px);
   }
 
   .ds-post-grid,
@@ -443,6 +478,10 @@
 }
 
 
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
 @media (max-width: 520px) {
 
   .ds-container {
@@ -450,12 +489,20 @@
   }
 
   .ds-hero {
-    padding: 70px 0 60px;
+    padding: 60px 0 50px;
   }
 
   .ds-hero-title {
-    font-size: clamp(44px, 14vw, 64px);
-    letter-spacing: -0.045em;
+    letter-spacing: -0.035em;
+  }
+
+  .ds-hero-brand {
+    font-size: clamp(42px, 13vw, 58px);
+  }
+
+  .ds-hero-accent {
+    font-size: clamp(27px, 7.5vw, 38px);
+    line-height: 1.08;
   }
 
   .ds-hero-description {
