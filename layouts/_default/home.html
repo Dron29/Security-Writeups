@@ -1,16 +1,34 @@
 {{ define "main" }}
 
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
 <section class="ds-hero">
   <div class="ds-container">
+
     <div class="ds-hero-eyebrow">
       <span></span>
       CYBERSECURITY RESEARCH
     </div>
 
- <h1 class="ds-hero-title">
-  <span class="ds-hero-brand">NullTrace</span>
-  <span class="ds-hero-accent">Offensive Security • Research • Writeups</span>
-</h1>
+    <div class="ds-terminal">
+      <span class="ds-terminal-prompt">$</span>
+      <span class="ds-terminal-command"> ./initialize-nulltrace</span>
+      <span class="ds-terminal-cursor">_</span>
+    </div>
+
+    <h1 class="ds-hero-title">
+
+      <span class="ds-hero-brand">
+        <span class="ds-brand-text">NullTrace</span>
+      </span>
+
+      <span class="ds-hero-accent">
+        Offensive Security • Research • Writeups
+      </span>
+
+    </h1>
 
     <p class="ds-hero-description">
       Practical security research, penetration testing, bug bounty methodology,
@@ -18,6 +36,7 @@
     </p>
 
     <div class="ds-hero-actions">
+
       <a href="{{ "posts/" | relLangURL }}" class="ds-button ds-button-primary">
         Explore Research
       </a>
@@ -25,21 +44,28 @@
       <a href="{{ "about/" | relLangURL }}" class="ds-button ds-button-secondary">
         About Me
       </a>
+
     </div>
 
-    <!-- {{ if site.Params.social }}
+    {{ if site.Params.social }}
       <div class="ds-social">
         {{ partial "social-links.html" . }}
-       </div> 
-    {{ end }} 
-  </div> -->
+      </div>
+    {{ end }}
+
+  </div>
 </section>
 
+
+<!-- =========================================================
+     LATEST POSTS
+     ========================================================= -->
 
 <section class="ds-section ds-research">
   <div class="ds-container">
 
     <div class="ds-section-header">
+
       <div>
         <span class="ds-section-label"></span>
         <h2>LATEST POSTS</h2>
@@ -48,6 +74,7 @@
       <a href="{{ "posts/" | relLangURL }}" class="ds-view-all">
         View all →
       </a>
+
     </div>
 
     <div class="ds-post-grid">
@@ -57,9 +84,11 @@
       {{ if $posts }}
 
         {{ range $posts | first 3 }}
+
           <article class="ds-post-card">
 
             <div class="ds-post-meta">
+
               {{ with .Date }}
                 <time datetime="{{ .Format "2006-01-02" }}">
                   {{ .Format "02 Jan 2006" }}
@@ -70,6 +99,7 @@
                 <span>·</span>
                 <span>{{ index . 0 }}</span>
               {{ end }}
+
             </div>
 
             <h3>
@@ -79,21 +109,29 @@
             </h3>
 
             {{ with .Summary }}
-              <p>{{ . | plainify | truncate 150 }}</p>
+              <p>
+                {{ . | plainify | truncate 150 }}
+              </p>
             {{ end }}
 
             <a href="{{ .RelPermalink }}" class="ds-read-more">
-              Read Posts →
+              Read Post →
             </a>
 
           </article>
+
         {{ end }}
 
       {{ else }}
 
         <div class="ds-empty-state">
+
           <span>//</span>
-          <p>Research articles are being published.</p>
+
+          <p>
+            Research articles are being published.
+          </p>
+
         </div>
 
       {{ end }}
@@ -103,50 +141,120 @@
 </section>
 
 
+<!-- =========================================================
+     AREAS OF FOCUS
+     ========================================================= -->
+
 <section class="ds-section ds-focus">
   <div class="ds-container">
 
     <div class="ds-section-heading">
-      <span class="ds-section-label">EXPERTISE</span>
-      <h2>Areas of Focus</h2>
+
+      <span class="ds-section-label">
+        EXPERTISE
+      </span>
+
+      <h2>
+        Areas of Focus
+      </h2>
+
     </div>
 
     <div class="ds-focus-grid">
 
-      <a href="{{ "categories/penetration-testing/" | relLangURL }}" class="ds-focus-card">
+      <a
+        href="{{ "categories/penetration-testing/" | relLangURL }}"
+        class="ds-focus-card"
+      >
         <span class="ds-card-number">01</span>
-        <h3>Penetration Testing</h3>
-        <p>Web applications, APIs and infrastructure.</p>
+
+        <h3>
+          Penetration Testing
+        </h3>
+
+        <p>
+          Web applications, APIs and infrastructure.
+        </p>
       </a>
 
-      <a href="{{ "categories/bug-bounty/" | relLangURL }}" class="ds-focus-card">
+
+      <a
+        href="{{ "categories/bug-bounty/" | relLangURL }}"
+        class="ds-focus-card"
+      >
         <span class="ds-card-number">02</span>
-        <h3>Bug Bounty</h3>
-        <p>Vulnerability research and practical methodologies.</p>
+
+        <h3>
+          Bug Bounty
+        </h3>
+
+        <p>
+          Vulnerability research and practical methodologies.
+        </p>
       </a>
 
-      <a href="{{ "categories/ctf/" | relLangURL }}" class="ds-focus-card">
+
+      <a
+        href="{{ "categories/ctf/" | relLangURL }}"
+        class="ds-focus-card"
+      >
         <span class="ds-card-number">03</span>
-        <h3>CTF Writeups</h3>
-        <p>Web, Linux, Windows, OSINT and more.</p>
+
+        <h3>
+          CTF Writeups
+        </h3>
+
+        <p>
+          Web, Linux, Windows, OSINT and more.
+        </p>
       </a>
 
-      <a href="{{ "categories/cloud-security/" | relLangURL }}" class="ds-focus-card">
+
+      <a
+        href="{{ "categories/cloud-security/" | relLangURL }}"
+        class="ds-focus-card"
+      >
         <span class="ds-card-number">04</span>
-        <h3>Cloud Security</h3>
-        <p>Offensive and defensive cloud security research.</p>
+
+        <h3>
+          Cloud Security
+        </h3>
+
+        <p>
+          Offensive and defensive cloud security research.
+        </p>
       </a>
 
-      <a href="{{ "categories/security-research/" | relLangURL }}" class="ds-focus-card">
+
+      <a
+        href="{{ "categories/security-research/" | relLangURL }}"
+        class="ds-focus-card"
+      >
         <span class="ds-card-number">05</span>
-        <h3>Security Research</h3>
-        <p>Technical experiments, analysis and discoveries.</p>
+
+        <h3>
+          Security Research
+        </h3>
+
+        <p>
+          Technical experiments, analysis and discoveries.
+        </p>
       </a>
 
-      <a href="{{ "categories/security-tools/" | relLangURL }}" class="ds-focus-card">
+
+      <a
+        href="{{ "categories/security-tools/" | relLangURL }}"
+        class="ds-focus-card"
+      >
         <span class="ds-card-number">06</span>
-        <h3>Security Tools</h3>
-        <p>Tools, automation and practical security workflows.</p>
+
+        <h3>
+          Security Tools
+        </h3>
+
+        <p>
+          Tools, automation and practical security workflows.
+        </p>
       </a>
 
     </div>
@@ -154,21 +262,29 @@
 </section>
 
 
+<!-- =========================================================
+     PHILOSOPHY
+     ========================================================= -->
+
 <section class="ds-section ds-statement">
   <div class="ds-container">
 
     <div class="ds-statement-box">
-      <span class="ds-section-label">PHILOSOPHY</span>
+
+      <span class="ds-section-label">
+        PHILOSOPHY
+      </span>
 
       <h2>
         Security research should be reproducible.
       </h2>
 
       <p>
-        Dron Security documents practical penetration testing,
+        NullTrace documents practical penetration testing,
         vulnerability research, CTF techniques, cloud security
         experiments and the methodology behind them.
       </p>
+
     </div>
 
   </div>

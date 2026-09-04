@@ -13,16 +13,26 @@
    ========================================================= */
 
 .ds-hero {
+  position: relative;
+
   padding: 65px 0 60px;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  overflow: hidden;
 }
+
+
+/* =========================================================
+   HERO EYEBROW
+   ========================================================= */
 
 .ds-hero-eyebrow {
   display: flex;
   align-items: center;
   gap: 12px;
 
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 
   font-family: "JetBrains Mono", monospace;
   font-size: 11px;
@@ -30,22 +40,103 @@
   letter-spacing: 0.14em;
 
   color: #8f9bb3;
+
+  opacity: 0;
+
+  animation:
+    nulltraceEyebrowReveal
+    0.6s
+    ease-out
+    0.1s
+    forwards;
 }
 
 .ds-hero-eyebrow span {
   display: block;
+
   width: 24px;
   height: 1px;
+
   background: #68748b;
+
+  transform-origin: left;
+
+  animation:
+    nulltraceLineReveal
+    0.6s
+    ease-out
+    0.15s
+    both;
 }
+
+
+/* =========================================================
+   TERMINAL INITIALIZATION
+   ========================================================= */
+
+.ds-terminal {
+  display: flex;
+  align-items: center;
+
+  min-height: 22px;
+
+  margin-bottom: 14px;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+
+  color: #59667d;
+
+  opacity: 0;
+
+  animation:
+    nulltraceTerminalReveal
+    0.5s
+    ease-out
+    0.55s
+    forwards;
+}
+
+.ds-terminal-prompt {
+  color: #5967ff;
+}
+
+.ds-terminal-command {
+  color: #77839a;
+}
+
+
+/* Cursor */
+
+.ds-terminal-cursor {
+  margin-left: 4px;
+
+  color: #6874ff;
+
+  animation:
+    nulltraceCursorBlink
+    0.75s
+    steps(1)
+    infinite;
+}
+
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
 
 .ds-hero-title {
   margin: 0;
+
   max-width: 1200px;
 
   font-family: "Space Grotesk", sans-serif;
+
   line-height: 1;
+
   letter-spacing: -0.045em;
+
   font-weight: 700;
 }
 
@@ -55,28 +146,90 @@
 
 
 /* =========================================================
-   HERO BRAND
+   NULLTRACE BRAND
    ========================================================= */
 
 .ds-hero-brand {
+  position: relative;
+
+  display: inline-block !important;
+
+  width: fit-content;
+
   font-size: clamp(48px, 4.5vw, 68px);
+
   line-height: 1;
 
   color: #f2f3f5;
+
+  opacity: 0;
+
+  transform: translateY(10px);
+
+  animation:
+    nulltraceBrandReveal
+    0.7s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.95s
+    forwards;
+}
+
+
+/*
+   Scan line that moves across NullTrace
+*/
+
+.ds-hero-brand::after {
+  content: "";
+
+  position: absolute;
+
+  left: -8px;
+  top: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background: #6874ff;
+
+  opacity: 0;
+
+  box-shadow:
+    0 0 10px rgba(104, 116, 255, 0.8),
+    0 0 22px rgba(104, 116, 255, 0.45);
+
+  animation:
+    nulltraceScan
+    0.9s
+    ease-in-out
+    1.15s
+    forwards;
 }
 
 
 /* =========================================================
-   HERO TAGLINE
+   SUBTITLE / TAGLINE
    ========================================================= */
 
 .ds-hero-accent {
   margin-top: 10px;
 
   font-size: clamp(28px, 3vw, 44px);
+
   line-height: 1.1;
 
   color: #737e95;
+
+  opacity: 0;
+
+  transform: translateY(14px);
+
+  animation:
+    nulltraceTaglineReveal
+    0.8s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    1.45s
+    forwards;
 }
 
 
@@ -90,10 +243,23 @@
   margin: 22px 0 22px;
 
   font-family: "Inter", sans-serif;
+
   font-size: 16px;
+
   line-height: 1.7;
 
   color: #9da8bc;
+
+  opacity: 0;
+
+  transform: translateY(12px);
+
+  animation:
+    nulltraceContentReveal
+    0.7s
+    ease-out
+    1.7s
+    forwards;
 }
 
 .ds-hero-description::first-letter {
@@ -102,28 +268,46 @@
 
 
 /* =========================================================
-   HERO ACTIONS
+   HERO BUTTONS
    ========================================================= */
 
 .ds-hero-actions {
   display: flex;
+
   gap: 12px;
+
   margin-top: 26px;
+
+  opacity: 0;
+
+  transform: translateY(10px);
+
+  animation:
+    nulltraceContentReveal
+    0.7s
+    ease-out
+    1.85s
+    forwards;
 }
 
 .ds-button {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
   min-height: 42px;
+
   padding: 0 20px;
 
   border-radius: 5px;
 
   font-family: "JetBrains Mono", monospace;
+
   font-size: 12px;
+
   font-weight: 600;
+
   text-decoration: none;
 
   transition:
@@ -138,7 +322,9 @@
 
 .ds-button-primary {
   background: #4c46ff;
+
   color: white;
+
   border: 1px solid #4c46ff;
 }
 
@@ -148,7 +334,9 @@
 
 .ds-button-secondary {
   background: transparent;
+
   color: #7d89ff;
+
   border: 1px solid #353cff;
 }
 
@@ -158,7 +346,7 @@
 
 
 /* =========================================================
-   SOCIAL LINKS
+   SOCIAL
    ========================================================= */
 
 .ds-social {
@@ -167,6 +355,7 @@
 
 .ds-social a {
   margin-right: 14px;
+
   opacity: 0.7;
 }
 
@@ -185,7 +374,9 @@
 
 .ds-section-header {
   display: flex;
+
   align-items: flex-end;
+
   justify-content: space-between;
 
   margin-bottom: 30px;
@@ -201,8 +392,11 @@
   margin-bottom: 10px;
 
   font-family: "JetBrains Mono", monospace;
+
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 0.14em;
 
   color: #69758c;
@@ -212,16 +406,21 @@
   margin: 0;
 
   font-family: "Space Grotesk", sans-serif;
+
   font-size: 30px;
+
   line-height: 1.2;
+
   letter-spacing: -0.03em;
 }
 
 .ds-view-all {
   font-family: "JetBrains Mono", monospace;
+
   font-size: 11px;
 
   color: #5967ff;
+
   text-decoration: none;
 }
 
@@ -231,12 +430,14 @@
 
 
 /* =========================================================
-   RESEARCH / POSTS
+   POSTS
    ========================================================= */
 
 .ds-post-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 14px;
 }
 
@@ -246,6 +447,7 @@
   padding: 25px;
 
   border: 1px solid rgba(150, 160, 185, 0.22);
+
   border-radius: 7px;
 
   background: rgba(12, 19, 38, 0.35);
@@ -257,18 +459,23 @@
 
 .ds-post-card:hover {
   transform: translateY(-3px);
+
   border-color: rgba(130, 140, 180, 0.55);
 }
 
 .ds-post-meta {
   display: flex;
+
   gap: 8px;
 
   margin-bottom: 25px;
 
   font-family: "JetBrains Mono", monospace;
+
   font-size: 10px;
+
   text-transform: uppercase;
+
   letter-spacing: 0.08em;
 
   color: #657189;
@@ -278,12 +485,15 @@
   margin: 0 0 12px;
 
   font-family: "Space Grotesk", sans-serif;
+
   font-size: 21px;
+
   line-height: 1.25;
 }
 
 .ds-post-card h3 a {
   color: #eef1f7;
+
   text-decoration: none;
 }
 
@@ -291,6 +501,7 @@
   margin: 0;
 
   font-size: 13px;
+
   line-height: 1.7;
 
   color: #8995ab;
@@ -302,9 +513,11 @@
   margin-top: 24px;
 
   font-family: "JetBrains Mono", monospace;
+
   font-size: 10px;
 
   color: #6673ff;
+
   text-decoration: none;
 }
 
@@ -316,6 +529,7 @@
   text-align: center;
 
   border: 1px dashed rgba(140, 150, 180, 0.25);
+
   border-radius: 7px;
 
   color: #69758c;
@@ -323,9 +537,11 @@
 
 .ds-empty-state span {
   display: block;
+
   margin-bottom: 10px;
 
   font-family: "JetBrains Mono", monospace;
+
   color: #5967ff;
 }
 
@@ -333,6 +549,7 @@
   margin: 0;
 
   font-family: "JetBrains Mono", monospace;
+
   font-size: 11px;
 }
 
@@ -347,7 +564,9 @@
 
 .ds-focus-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 12px;
 }
 
@@ -359,6 +578,7 @@
   padding: 26px 24px;
 
   border: 1px solid rgba(150, 160, 185, 0.3);
+
   border-radius: 7px;
 
   text-decoration: none;
@@ -383,6 +603,7 @@
   margin-bottom: 30px;
 
   font-family: "JetBrains Mono", monospace;
+
   font-size: 11px;
 
   color: #59657c;
@@ -392,6 +613,7 @@
   margin: 0 0 8px;
 
   font-family: "Space Grotesk", sans-serif;
+
   font-size: 17px;
 
   color: #edf0f6;
@@ -401,6 +623,7 @@
   margin: 0;
 
   font-size: 12px;
+
   line-height: 1.6;
 
   color: #77839a;
@@ -408,11 +631,12 @@
 
 
 /* =========================================================
-   STATEMENT
+   PHILOSOPHY
    ========================================================= */
 
 .ds-statement {
   padding-top: 25px;
+
   padding-bottom: 110px;
 }
 
@@ -422,6 +646,7 @@
   text-align: center;
 
   border: 1px solid rgba(150, 160, 185, 0.3);
+
   border-radius: 8px;
 }
 
@@ -443,9 +668,203 @@
   margin: 0 auto;
 
   font-size: 14px;
+
   line-height: 1.8;
 
   color: #8490a7;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+
+/* Eyebrow */
+
+@keyframes nulltraceEyebrowReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* Eyebrow line */
+
+@keyframes nulltraceLineReveal {
+
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+}
+
+
+/* Terminal */
+
+@keyframes nulltraceTerminalReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* NullTrace */
+
+@keyframes nulltraceBrandReveal {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(10px)
+      skewX(8deg);
+
+    filter:
+      blur(4px);
+  }
+
+  45% {
+    opacity: 0.65;
+
+    transform:
+      translateY(2px)
+      skewX(-2deg);
+
+    filter:
+      blur(1px);
+  }
+
+  75% {
+    opacity: 0.9;
+
+    transform:
+      translateY(0)
+      skewX(1deg);
+
+    filter:
+      blur(0);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      skewX(0);
+
+    filter:
+      blur(0);
+  }
+
+}
+
+
+/* Scan */
+
+@keyframes nulltraceScan {
+
+  0% {
+    left: -8px;
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  100% {
+    left: calc(100% + 8px);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* Tagline */
+
+@keyframes nulltraceTaglineReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* Description / buttons */
+
+@keyframes nulltraceContentReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* Terminal cursor */
+
+@keyframes nulltraceCursorBlink {
+
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+
 }
 
 
@@ -465,6 +884,7 @@
 
   .ds-hero-accent {
     margin-top: 10px;
+
     font-size: clamp(28px, 6vw, 40px);
   }
 
@@ -479,6 +899,7 @@
 
   .ds-section-header {
     align-items: flex-start;
+
     gap: 20px;
   }
 
@@ -509,19 +930,29 @@
 
   .ds-hero-accent {
     margin-top: 8px;
+
     font-size: clamp(25px, 7vw, 34px);
+
     line-height: 1.1;
+  }
+
+  .ds-terminal {
+    font-size: 10px;
   }
 
   .ds-hero-description {
     margin-top: 20px;
+
     font-size: 15px;
+
     line-height: 1.65;
   }
 
   .ds-hero-actions {
     flex-direction: column;
+
     align-items: stretch;
+
     margin-top: 24px;
   }
 
@@ -539,6 +970,39 @@
 
   .ds-statement-box {
     padding: 40px 22px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ds-hero-eyebrow,
+  .ds-hero-eyebrow span,
+  .ds-terminal,
+  .ds-hero-brand,
+  .ds-hero-brand::after,
+  .ds-hero-accent,
+  .ds-hero-description,
+  .ds-hero-actions {
+
+    opacity: 1;
+
+    transform: none;
+
+    animation: none;
+
+    filter: none;
+  }
+
+  .ds-terminal-cursor {
+    animation: none;
+
+    opacity: 1;
   }
 
 }
