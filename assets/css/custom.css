@@ -1006,3 +1006,19 @@
   }
 
 }
+
+/* =========================================================
+   BLOG POST HEADINGS
+   ========================================================= */
+
+.post-content h2 {
+  color: #7d89ff !important;
+}
+
+.post-content h3 {
+  color: #6874ff !important;
+}
+
+.post-content h4 {
+  color: #5967ff !important;
+}
