@@ -1,6 +1,6 @@
 ---
 
-title: "About"
+title: "About Me"
 description: "Cybersecurity researcher focused on penetration testing, offensive security, application security, and security research."
 ----------------------------------------------------------------------------------------------------------------------------------------
 

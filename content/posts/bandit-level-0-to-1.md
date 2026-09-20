@@ -1,8 +1,8 @@
 ---
-title: "OverTheWire Bandit Level 0 → Level 1 Writeup"
+title: "OverTheWire Bandit Level 0 → Level 1"
 date: 2026-09-06
 draft: false
-description: "A beginner-friendly walkthrough of OverTheWire Bandit Level 0 to Level 1 using basic Linux commands to locate and read the password file."
+description: "A beginner-friendly walkthrough of solving Bandit Level 0 → Level 1 using basic Linux commands."
 tags:
   - overthewire
   - bandit
