@@ -83,7 +83,17 @@
 body,
 [data-theme="light"] body {
   background-color: var(--bg-deep) !important;
-  background-image: none !important;
+  background-image:
+    linear-gradient(
+      rgba(52, 211, 153, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(52, 211, 153, 0.025) 1px,
+      transparent 1px
+    ) !important;
+  background-size: 72px 72px;
 }
 
 body::before {
@@ -357,19 +367,20 @@ main {
 
 .ds-hero {
   position: relative;
-  padding: 60px 0 70px;
+  padding: 105px 0 80px;
   border-bottom: 1px solid var(--border-color);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ds-hero-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.95fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 64px;
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   align-items: center;
 }
+
 
 .ds-hero-eyebrow {
   display: flex;
@@ -526,7 +537,7 @@ main {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   background: var(--bg-secondary);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .ds-widget-bar {
